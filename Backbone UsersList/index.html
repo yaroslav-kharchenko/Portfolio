@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BackboneJS</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/underscore.js"></script>
+  <script src="js/jquery-3.1.1.js"></script>
+  <script src="js/backbone.js"></script>
+</head>
+<body>
+
+<script id="userTemplate" type="text/template">
+  <img src="<%= photo %>" alt="<%= name %>" />
+
+  <div class="user-contact-info">
+    <span class="user-id"><%= id %></span>
+    <h2 class="user-name"><%= name %></h2>
+    <div class="company-name company-info"><%= company.bs %></div>
+    <div class="user-city user-info">City: <%= address.city %></div>
+    <div class="user-phone user-info">Tel: <%= phone %></div>
+    <div class="user-email user-info">Email: <a href="mailto:<%= email %>"><%= email %></a></div>
+  </div>
+
+  <div class="user-credentials">
+    <div class="user-username">Username: <%= username %></div>
+    <div class="user-website">WebSite: <a href="http://<%= website %>"><%= website %></a></div>
+  </div>
+
+  <div class="buttons">
+    <button class="edit">Edit</button><br>
+    <button class="delete">Delete</button>
+  </div>
+
+</script>
+
+<script id="userEditTemplate" type="text/template">
+  <form action="#" class="editing-form">
+
+    <div class="user-contact-info">
+      <div class="form-row">
+        <label for="edit-name">Name: </label><input type="text" id="edit-name" value="<%= name %>"/>
+      </div>
+      <div class="form-row">
+        <label for="edit-company">Company: </label><input type="text" id="edit-company" value="<%= company.bs %>"/>
+      </div>
+      <div class="form-row">
+        <label for="edit-city">City: </label><input type="text" id="edit-city" value="<%= address.city %>"/>
+      </div>
+      <div class="form-row">
+        <label for="edit-phone">Tel: </label><input type="text" id="edit-phone" value="<%= phone %>"/>
+      </div>
+      <div class="form-row">
+        <label for="edit-email">Email: </label><input type="text" id="edit-email" value="<%= email %>"/>
+      </div>
+    </div>
+
+    <div class="user-credentials">
+      <div class="form-row">
+        <label for="edit-username">Username: </label><input type="text" id="edit-username" value="<%= username %>"/>
+      </div>
+      <div class="form-row">
+        <label for="edit-website">WebSite: </label><input type="text" id="edit-website" value="<%= website %>"/>
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="save">Save</button><br>
+      <button class="cancel">Cancel</button>
+    </div>
+  </form>
+</script>
+
+
+<section class="wrap">
+  <h1>Users List</h1>
+
+  <div id="container">
+
+    <!--Adding form-->
+    <a href="#" class="show_add-form" id="showForm">Add New User</a>
+    <form id="addUser" class="user-add-form" action="#">
+      <div class="form-row">
+        <label for="name" class="form-col">Name:</label><input id="name" value="Yaroslav Kharchenko"/>
+      </div>
+      <div class="form-row">
+        <label for="company" class="form-col">Company name:</label><input id="company" value="epam"/>
+      </div>
+      <div class="form-row">
+        <label for="city" class="form-col">City:</label><input id="city" value="Kharkov"/>
+      </div>
+      <div class="form-row">
+        <label for="phone" class="form-col">Tel:</label><input id="phone" value="+9379-99-92"/>
+      </div>
+      <div class="form-row">
+        <label for="email" class="form-col">Email:</label><input id="email" value="Yaroslav_Kharchenko@epam.com"/>
+      </div>
+      <div class="form-row">
+        <label for="username" class="form-col">Username:</label><input id="username" value="Yaroslav_Kharchenko"/>
+      </div>
+      <div class="form-row">
+        <label for="website" class="form-col">WebSite:</label><input id="website" value="google.com"/>
+      </div>
+      <button id="add">Add</button>
+    </form>
+
+  </div>
+</section>
+
+<script src="js/mvc/model/user_model.js"></script>
+<script src="js/mvc/model/user-list_collection.js"></script>
+<script src="js/mvc/view/user_view.js"></script>
+<script src="js/mvc/view/user-list_view.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

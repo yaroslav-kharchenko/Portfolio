@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Daily Task List</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/color_schemes.css">
+  <style>
+    .message--success{
+      display: block;
+    }
+
+    .message--error{
+      /*display: block;*/
+    }
+
+    .message--warning{
+      /*display: block;*/
+    }
+
+    .message--info{
+      /*display: block;*/
+    }
+  </style>
+</head>
+<body class="page-header--static">
+
+  <header class="page-header wrapper">
+      <div class="logo">
+        <a href="#"><img src="img/Logo.svg" alt="" width="242"/></a>
+      </div>
+      <nav class="menu">
+        <a class="menu__option link-add-task icomoon" href="#" title="Add Task">&#xe900;</a>
+        <a class="menu__option link-remove-tasks icomoon" href="#" title="Remove Tasks">&#xe912;</a>
+        <a class="menu__option link-charts icomoon" href="#" title="Charts">&#xe90c;</a>
+        <a class="menu__option link-options icomoon" href="#" title="Options">&#xe90b;</a>
+        <a class="menu__option link-exit icomoon" href="#" title="Exit">&#xe908;</a>
+      </nav>
+  </header>
+
+  <main class="content-wrap task-list-block">
+
+    <h2 class="task-list__header">Daily Task List <a class="link-add-task icomoon" href="#" title="Add Task">&#xe900;</a></h2>
+
+    <ul class="task-groups-list">
+
+      <li class="task-groups__item daily-list">
+
+        <div class="daily-list__tabs tabs">
+          <a href="#" class="tabs__link">To Do</a>
+          |<a href="#" class="tabs__link">Done</a>
+        </div>
+
+        <ul class="task-list">
+          <li class="task category--hobby priority--urgent clearfix">
+
+            <div class="trash icomoon">
+              <span class="recycle">&#xe912;</span>
+              <span class="cancel-remove">&#xe910;</span>
+            </div>
+            
+            <div class="task-date">
+              TODAY <br>
+              <span class="task-date__day"></span>
+              <span class="task-date__month"></span>
+            </div>
+
+            <section class="task-info">
+              <h5 class="task-name">Lorem ipsum sit amet</h5>
+              <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+            </section>
+
+            <div class="task-priority clearfix">
+              <span class="task-priority__icon-tomato icomoon">&#xe90e;</span>
+              <span class="task-priority__icon-timer icomoon">&#xe90d;</span>
+              <span class="task-priority__value">3</span>
+            </div>
+
+            <div class="task-controls">
+              <a href="#" class="link-pick-up-task controls-btn icomoon">&#xe904;</a>
+              <a href="#" class="link-edit-task controls-btn icomoon">&#xe905;</a>
+            </div>
+
+          </li>
+          <li class="task category--sport priority--high">
+
+            <div class="trash icomoon">
+              <span class="recycle">&#xe912;</span>
+              <span class="cancel-remove">&#xe910;</span>
+            </div>
+
+            <div class="task-date">
+              TODAY <br>
+              <span class="task-date__day"></span>
+              <span class="task-date__month"></span>
+            </div>
+
+            <section class="task-info">
+              <h5 class="task-name">Lorem ipsum sit amet</h5>
+              <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+            </section>
+
+            <div class="task-priority clearfix">
+              <span class="task-priority__icon-tomato icomoon">&#xe90e;</span>
+              <span class="task-priority__icon-timer icomoon">&#xe90d;</span>
+              <span class="task-priority__value">3</span>
+            </div>
+
+            <div class="task-controls">
+              <a href="#" class="link-pick-up-task controls-btn icomoon">&#xe904;</a>
+              <a href="#" class="link-edit-task controls-btn icomoon">&#xe905;</a>
+            </div>
+
+          </li>
+          <li class="task category--work priority--high">
+
+            <div class="trash icomoon in-recycle">
+              <span class="recycle">&#xe912;</span>
+              <span class="cancel-remove">&#xe910;</span>
+            </div>
+
+            <div class="task-date">
+              TODAY <br>
+              <span class="task-date__day"></span>
+              <span class="task-date__month"></span>
+            </div>
+
+            <section class="task-info">
+              <h5 class="task-name">Lorem ipsum sit amet</h5>
+              <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+            </section>
+
+            <div class="task-priority clearfix">
+              <span class="task-priority__icon-tomato icomoon">&#xe90e;</span>
+              <span class="task-priority__icon-timer icomoon">&#xe90d;</span>
+              <span class="task-priority__value">3</span>
+            </div>
+
+            <div class="task-controls">
+              <a href="#" class="link-pick-up-task controls-btn icomoon">&#xe904;</a>
+              <a href="#" class="link-edit-task controls-btn icomoon">&#xe905;</a>
+            </div>
+
+          </li>
+          <li class="task category--education priority--middle">
+
+            <div class="trash icomoon">
+              <span class="recycle">&#xe912;</span>
+              <span class="cancel-remove">&#xe910;</span>
+            </div>
+
+            <div class="task-date">
+              TODAY <br>
+              <span class="task-date__day"></span>
+              <span class="task-date__month"></span>
+            </div>
+
+            <section class="task-info">
+              <h5 class="task-name">Lorem ipsum sit amet</h5>
+              <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+            </section>
+
+            <div class="task-priority clearfix">
+              <span class="task-priority__icon-tomato icomoon">&#xe90e;</span>
+              <span class="task-priority__icon-timer icomoon">&#xe90d;</span>
+              <span class="task-priority__value">3</span>
+            </div>
+
+            <div class="task-controls">
+              <a href="#" class="link-pick-up-task controls-btn icomoon">&#xe904;</a>
+              <a href="#" class="link-edit-task controls-btn icomoon">&#xe905;</a>
+            </div>
+
+          </li>
+          <li class="task category--other priority--low">
+
+            <div class="trash icomoon">
+              <span class="recycle">&#xe912;</span>
+              <span class="cancel-remove">&#xe910;</span>
+            </div>
+
+            <div class="task-date">
+              TODAY <br>
+              <span class="task-date__day"></span>
+              <span class="task-date__month"></span>
+            </div>
+
+            <section class="task-info">
+              <h5 class="task-name">Lorem ipsum sit amet</h5>
+              <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+            </section>
+
+            <div class="task-priority clearfix">
+              <span class="task-priority__icon-tomato icomoon">&#xe90e;</span>
+              <span class="task-priority__icon-timer icomoon">&#xe90d;</span>
+              <span class="task-priority__value">3</span>
+            </div>
+
+            <div class="task-controls">
+              <a href="#" class="link-pick-up-task controls-btn icomoon">&#xe904;</a>
+              <a href="#" class="link-edit-task controls-btn icomoon">&#xe905;</a>
+            </div>
+
+          </li>
+        </ul>
+
+      </li>
+
+      <li class="tasks-categories">
+
+        <a href="#" class="global_list">Global list
+          <span class="icon-arrow-right icomoon">&#xe907;</span>
+          <span class="icon-arrow-down icomoon">&#xe906;</span>
+        </a>
+
+      </li>
+    </ul>
+
+  <!--NOTIFICATIONS-->
+
+    <!--TOP-->
+
+    <div class="notification notification--top message--success">
+      <span class="notification-icon icomoon">&#xe913;</span>
+      <p class="notification-text">Task was successfully created!</p>
+      <a href="#" class="close-message-btn icomoon">&#xe910;</a>
+    </div>
+
+    <div class="notification notification--top message--error">
+      <span class="notification-icon icomoon">&#xe914;</span>
+      <p class="notification-text">Ups! An error has occured!</p>
+      <a href="#" class="close-message-btn icomoon">&#xe910;</a>
+    </div>
+
+    <div class="notification notification--top message--warning">
+      <span class="notification-icon icomoon">&#xe915;</span>
+      <p class="notification-text">This is just a warning notification message!</p>
+      <a href="#" class="close-message-btn icomoon">&#xe910;</a>
+    </div>
+
+    <div class="notification notification--top message--info">
+      <span class="notification-icon icomoon">&#xe913;</span>
+      <p class="notification-text">This is just an info notification message!</p>
+      <a href="#" class="close-message-btn icomoon">&#xe910;</a>
+    </div>
+
+    <!--BOTTOM-->
+
+    <div class="notification notification--bottom message--success">
+      <span class="notification-icon icomoon">&#xe913;</span>
+      <p class="notification-text">Task was successfully created!</p>
+      <a href="#" class="close-message-btn icomoon">&#xe910;</a>
+    </div>
+
+    <div class="notification notification--bottom message--error">
+      <span class="notification-icon icomoon">&#xe914;</span>
+      <p class="notification-text">Ups! An error has occured!</p>
+      <a href="#" class="close-message-btn icomoon">&#xe910;</a>
+    </div>
+
+    <div class="notification notification--bottom message--warning">
+      <span class="notification-icon icomoon">&#xe915;</span>
+      <p class="notification-text">This is just a warning notification message!</p>
+      <a href="#" class="close-message-btn icomoon">&#xe910;</a>
+    </div>
+
+    <div class="notification notification--bottom message--info">
+      <span class="notification-icon icomoon">&#xe913;</span>
+      <p class="notification-text">This is just an info notification message!</p>
+      <a href="#" class="close-message-btn icomoon">&#xe910;</a>
+    </div>
+
+  </main>
+
+</body>
+</html>

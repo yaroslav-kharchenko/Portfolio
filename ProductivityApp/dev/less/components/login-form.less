@@ -1,0 +1,67 @@
+.login-form{
+  margin-top: 2.625rem;
+
+  section{
+    position: relative;
+    width: 100%;
+    color: @color-main-font;
+    height: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  label{
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+}
+
+.login-form {
+
+  input {
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 0 0.875rem 1.875rem;
+    background: transparent;
+    border: none;
+    height: 1.813rem;
+    font-size: 1rem;
+    color: @color-main-font;
+    font-family: @main-font-family;
+    border-bottom: 1px solid #425869;
+    &:focus{
+      outline: none;
+      border-bottom: 1px solid #fff;
+      color: #fff;
+      &~label{
+        color: #fff;
+      }
+    }
+    &:invalid{
+      border-bottom: 1px solid #f75c4c;
+      &~.invalid-message{
+        display: block;
+      }
+    }
+  }
+
+  .invalid-message{
+    position: absolute;
+    display: none;
+    bottom: -1rem;
+    font-size: 0.75rem;
+    line-height: 0.75rem;
+    font-family: @main-font-family;
+    color: #f75c4c;
+  }
+
+}
+
+/*Button*/
+
+.login-button{
+  display: block;
+  margin: 3.125rem auto 0;
+}

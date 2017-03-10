@@ -1,0 +1,19 @@
+<h2 class="settings-header">{{obj.title}}</h2>
+<form action="#" class="categories_form inner-wrap">
+  <ul class="categories-list">
+    {{#options}}
+    <li class="categories-item">
+      <input type="text" id="category-{{id}}" class="category-name" value="{{value
+        }}"/>
+      <i class="category-color"></i>
+    </li>
+    {{/options}}
+  </ul>
+</form>
+<div class="settings-controls inner-wrap">
+  {{#obj.buttons}}
+    {{#if show}}
+      <button class="{{className}}-button {{className}}-button--categories button button--{{size}} button--{{color}}">{{value}}</button>
+    {{/if}}
+  {{/obj.buttons}}
+</div>

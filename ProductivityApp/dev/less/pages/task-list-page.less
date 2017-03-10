@@ -1,0 +1,124 @@
+@import '../components/task';
+@import '../components/task-collection';
+@import '../components/modal';
+
+body{
+  overflow-x: hidden;
+}
+
+/*Select tabs*/
+
+.select__tabs{
+  left: 0;
+  display: none;
+}
+
+.select__tabs .tabs__link:first-child{
+  margin-left: 0;
+}
+
+.select__tabs .tabs__link{
+  letter-spacing: 0;
+}
+
+/*Guide messages*/
+
+.guide{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
+  color: @color-main-font;
+  font-size: 2.375rem;
+  line-height: 3rem;
+  font-family: @main-font-family;
+  font-weight: 300;
+  .icomoon{
+    font-size: 3.75rem;
+  }
+}
+
+.guide-message{
+  margin-top: 0.8125rem;
+  letter-spacing: 0.01em;
+}
+
+/*FIRST MESSAGE*/
+
+.first-task{
+  margin-top: 6.063rem;
+}
+
+/*SECOND MESSAGE*/
+
+.drag-tasks .guide-message{
+  margin-bottom: 2rem;
+}
+
+.drag-tasks{
+  margin-top: 0;
+  padding-top: 2rem;
+}
+
+/*EXCELENT MESSAGE*/
+
+.excelent-tasks{
+  margin-top: 0;
+  padding-top: 2rem;
+}
+
+/*Notifications*/
+
+.notification{
+  position: fixed;
+  width: 28.13rem;
+  height: 3.25rem;
+  line-height: 3.125rem;
+  border: 1px solid #dfe2e5;
+  box-sizing: border-box;
+  background: #529bcd;
+  border-radius: 0.1875rem;
+  color: #fff;
+  font-family: @main-font-family;
+  font-weight: bold;
+  font-size: 0.9375rem;
+  box-shadow: 0 0.25rem 2rem 1.125rem rgba(0,0,0,0.2);
+  opacity: 0.85;
+}
+
+.notification-text{
+  padding-left: 0.8125rem;
+  display: inline-block;
+}
+
+.notification--bottom{
+  bottom: 1.938rem;
+  right: 6.61%;
+  width: 33%;
+}
+
+.notification--top{
+  width: 86.67%;
+  margin: 0 auto;
+  top: 1.875rem;
+}
+
+.notification .icomoon{
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.notification .notification-icon{
+  font-size: 2.063rem;
+  float: left;
+  width: 4.125rem;
+  text-align: center;
+  background: rgba(255,255,255,0.25);
+  border-radius: 0.1875rem 0 0 0.1875rem;
+}
+
+.close-message-btn{
+  float: right;
+  margin-right: 1.063rem;
+}

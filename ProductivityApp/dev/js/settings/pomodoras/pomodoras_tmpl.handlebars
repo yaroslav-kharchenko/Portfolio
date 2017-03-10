@@ -1,0 +1,14 @@
+<h2 class="settings-header">{{title}}</h2>
+<div class="options-section clearfix">
+</div>
+<section class="cycle-graph-section">
+  <h3>Your cycle</h3>
+  <div class="cycle-graph-container"></div>
+</section>
+<div class="settings-controls inner-wrap">
+  {{#buttons}}
+    {{#if show}}
+      <button class="{{className}}-button {{className}}-button--pomodoras button button--{{size}} button--{{color}}">{{value}}</button>
+    {{/if}}
+  {{/buttons}}
+</div>

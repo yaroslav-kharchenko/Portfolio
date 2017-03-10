@@ -1,0 +1,15 @@
+<header class="{{mask}}-header">
+  <a href="#"><img class="{{mask}}-page-logo" src="{{logo.src}}" alt="{{logo.text}}"></a>
+</header>
+<main class="main">
+  <form class="{{mask}}-form" action="#">
+    {{#inputs}}
+    <section class="{{name}}">
+      <input id="{{name}}-input" type="{{type}}" placeholder="{{placeholder}}">
+      <label for="{{name}}-input" class="icon-{{icon}}"></label>
+      <span class="invalid-message">{{invalidMsg}}</span>
+    </section>
+    {{/inputs}}
+    <button class="{{mask}}-button button button--small button--green">Log In</button>
+  </form>
+</main>

@@ -1,0 +1,245 @@
+/*Inner wrap*/
+.inner-wrap{
+  display: block;
+  width: 17.81rem;
+  margin: 0 auto;
+}
+
+/*Main*/
+
+.settings-block{
+  display: block;
+  position: relative;
+}
+
+.settings-header{
+  font-family: @main-font-family;
+  font-weight: 300;
+  font-size: 1.25rem;
+  letter-spacing: 0.025em;
+  color: @color-main-font;
+  text-align: center;
+  margin-bottom: 5.063rem;
+}
+
+/*Settings*/
+
+.options-section{
+  position: relative;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.column-container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.column-container li{
+  width: 44%;
+}
+
+.option-block{
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  padding-left: 2.313rem;
+  margin-bottom: 3.75rem;
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0.1875rem;
+    left: 0;
+    width: 1.063rem;
+    height: 1.063rem;
+    -webkit-border-radius: 0.5625rem;
+    -moz-border-radius: 0.5625rem;
+    border-radius: 0.5625rem;
+    background: #fff;
+  }
+}
+
+.work-time:before{
+  background: @category-1;
+}
+
+.work-iteration:before{
+  background: @category-2;
+}
+
+.short-break:before,
+.long-break:before{
+  background: @category-5;
+}
+
+button,
+input{
+  color: @color-main-font;
+}
+
+
+.option-controls{
+  width: 40.3%;
+  overflow: hidden;
+  display: inline-block;
+  position: absolute;
+  left: 43.2%;
+}
+
+.work-iteration .option-controls,
+.long-break .option-controls{
+  left: 50%;
+}
+
+.setting-title{
+  display: inline-block;
+  margin-right: 2rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: @second-font-family;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  margin-bottom: 0.9375rem;
+}
+
+.timer-value{
+  text-align: center;
+  font-family: @main-font-family;
+  width: 100%;
+  border-bottom: 1px solid @color-main-font;
+  font-size: 1rem;
+  padding-bottom: 0.25rem;
+  line-height: 1.313rem;
+}
+
+.option-controls button{
+  font-family: 'icomoon';
+  font-size: 0.625rem;
+  cursor: pointer;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 0.3125rem;
+}
+
+.value-increase{
+  right: 0;
+}
+
+.value-decrease{
+  left: 0;
+}
+
+.value-increase:hover,
+.value-decrease:hover{
+  color: #fff;
+}
+
+.value-increase:hover~input,
+.value-decrease:hover~input{
+  border-color: #fff;
+  color: #fff;
+}
+
+.description{
+  font-family: @second-font-family;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: @color-main-font;
+}
+
+/*Graph*/
+
+.cycle-graph-section{
+  text-align: center;
+  margin-bottom: 4.313rem;
+}
+
+.cycle-graph-section h3{
+  font-size: 1.25rem;
+  font-family: @second-font-family;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.6875rem;
+}
+
+/*Settings Controls Buttons*/
+
+.next-button{
+  display: none;
+}
+
+.settings-controls{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  font-size: 0;
+}
+
+@import '../components/cycle-graph';
+
+@media @tablet{
+  html{
+    font-size: 16px;
+  }
+  .column-container li{
+    width: 48%;
+  }
+}
+
+@media @mobile{
+  html{
+    font-size: 19px;
+  }
+  .settings-header{
+    font-size: 1.5rem;
+  }
+  .setting-title{
+    font-size: 1rem;
+  }
+  .options-section{
+    width: 75%;
+  }
+  .option-controls{
+    button{
+      font-size: 1rem;
+    }
+    .timer-value{
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+    }
+  }
+  .option-controls,
+  .work-iteration .option-controls,
+  .long-break .option-controls{
+    right: 0;
+    left: inherit;
+  }
+  .column-container li{
+    width: 100%;
+  }
+  .settings-controls{
+    width: 80%;
+  }
+  .button{
+    width: 49%;
+    margin: 0;
+  }
+}
+
+@media @mobile-landscape{
+  .column-container li{
+    width: 47%;
+  }
+  .options-section{
+    width: 100%;
+  }
+  .option-controls,
+  .work-iteration .option-controls,
+  .long-break .option-controls{
+    right: 0;
+    left: inherit;
+  }
+}

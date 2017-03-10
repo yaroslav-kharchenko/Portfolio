@@ -1,0 +1,32 @@
+<div class="trash icomoon">
+  <span class="recycle">&#xe912;</span>
+  <span class="cancel-remove">&#xe910;</span>
+</div>
+
+<div class="task-date">
+  {{#if obj.date}}
+    <span class="task-date__day">{{obj.date.day}}</span>
+    <span class="task-date__month">{{obj.date.month}}</span>
+  {{else}}
+    Today
+  {{/if}}
+</div>
+
+<section class="task-info">
+  <h5 class="task-name">{{obj.title}}</h5>
+  <p class="task-description">{{obj.desc}}</p>
+</section>
+
+<a href="" class="task-priority clearfix has-tooltip" title="Go to Timer">
+  <span class="task-priority__icon-tomato icomoon">&#xe90e;</span>
+  <span class="task-priority__icon-timer icomoon">&#xe90d;</span>
+  <span class="task-priority__value">{{obj.estimation}}</span>
+</a>
+
+<div class="task-controls">
+  {{#unless obj.isDaily}}
+    <a href="#" class="link-pick-up-task controls-btn icomoon">&#xe904;</a>
+  {{/unless}}
+
+  <a href="#" class="link-edit-task controls-btn icomoon has-tooltip" title="Edit task">&#xe905;</a>
+</div>

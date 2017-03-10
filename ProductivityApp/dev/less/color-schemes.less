@@ -1,0 +1,108 @@
+/*Buttons*/
+
+.button--green{
+  .colored-button(@color-success, @color-success-hover, @color-success-active);
+}
+
+.button--blue{
+  .colored-button(@color-primary, @color-primaty-hover, @color-primaty-active);
+}
+
+.button--red{
+  .colored-button(@color-danger, @color-danger-hover, @color-danger-active);
+}
+
+/*Categories*/
+
+.category--1 {
+  .colored-category(@category-1);
+}
+
+.global-list__list .category--1:after{
+  background-position: 0 0;
+}
+
+.category--2 {
+  .colored-category(@category-2);
+}
+
+.global-list__list .category--2:after{
+  background-position: -18px 0;
+}
+
+.category--3 {
+  .colored-category(@category-3);
+}
+
+.global-list__list .category--3:after{
+  background-position: -54px 0;
+}
+
+.category--4 {
+  .colored-category(@category-4);
+}
+
+.global-list__list .category--4:after{
+  background-position: -36px 0;
+}
+
+.category--5 {
+  .colored-category(@category-5);
+}
+
+.global-list__list .category--5:after{
+  background-position: -72px 0;
+}
+
+/*Priority*/
+
+.priority--urgent{
+  .colored-priority(@priority-urgent-text, @priority-urgent-bg);
+}
+
+.priority--high{
+  .colored-priority(@priority-high-text, @priority-high-bg);
+}
+
+.priority--middle{
+  .colored-priority(@priority-middle-text, @priority-middle-bg);
+}
+
+.priority--low{
+  .colored-priority(@priority-low-text, @priority-low-bg);
+}
+
+/*Color Schemes for Notifications*/
+
+.message--success{
+  background: @notification-success;
+  display: none;
+}
+
+.message--error{
+  background: @notification-error;
+  display: none;
+}
+
+.message--warning{
+  background: @notification-warning;
+  display: none;
+}
+
+.message--info{
+  background: @notification-info;
+  display: none;
+}
+
+/*TABS*/
+
+.tabs__link:hover,
+.tabs__link:active,
+.tabs__link:focus{
+  color: #fff;
+}
+
+.tabs__link--active,
+.link--active{
+  color: #fff;
+}

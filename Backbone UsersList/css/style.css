@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+html{
+  font-family: 'PT Sans', sans-serif;
+  background: url(../img/bg.png);
+}
+
+.wrap{
+  width: 75%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.wrap > h1{
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.user-section{
+  display: block;
+  margin: 10px 0;
+  padding: 20px;
+  background: #ddd;
+  border: 3px inset #666;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.user-section img{
+  float: right;
+  height: 100px;
+}
+
+.user-section > span{
+  display: block;
+}
+
+.user-section .user-contact-info{
+  float: left;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.user-id{
+  font-size: 10px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.user-name{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.company-name{
+  text-transform: uppercase;
+  font-size: 10px;
+  margin-bottom: 20px;
+}
+
+div.user-info{
+  font-style: italic;
+}
+
+.user-section .user-credentials{
+  float: left;
+}
+
+/*Adding form*/
+
+.show_add-form{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  background: white;
+  border-radius: 5px;
+  display: block;
+  width: 120px;
+  padding: 10px;
+  margin: 0 auto 10px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px;
+  border: 2px inset green;
+}
+
+.show_add-form:hover{
+  color: white;
+  background: green;
+}
+
+.show_add-form:active{
+  box-shadow: inset 0px 0px 15px rgba(0,0,0,0.4);
+}
+
+.user-add-form{
+  padding: 20px;
+  border-radius: 15px;
+  border: 2px inset #666;
+  display: none;
+}
+
+.form-row{
+  margin: 5px 0;
+}
+
+.form-row input{
+  width: 220px;
+}
+
+.form-col{
+  display: inline-block;
+  width: 115px;
+}
+
+.buttons{
+  position: absolute;
+  top: 50%;
+  right: 120px;
+  transform: translate(0, -50%);
+}
+
+.buttons button{
+  width: 100px;
+}
+
+.edit{
+  margin-bottom: 10px;
+}
+
+/*Editing form*/
+
+.editing-form{
+  height: 106px;
+}
+
+.editing-form .user-contact-info{
+  margin: 0 10px 0 0;
+  float: left;
+}
+
+.editing-form label{
+  display: inline-block;
+  width: 70px;
+}
+
+.editing-form .form-row{
+  margin: 0;
+}
+
+.save{
+  margin-bottom: 10px;
+}

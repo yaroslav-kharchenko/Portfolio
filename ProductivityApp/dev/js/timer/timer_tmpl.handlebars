@@ -1,0 +1,49 @@
+<main class="content-wrap timer-main">
+
+  <h2 class="timer-header">{{obj.title}}</h2>
+  <p class="timer-description">{{obj.desc}}</p>
+
+  <section class="pomadoras-section">
+    <ul class="pomadoras-list">
+      {{#times obj.estimation }}
+        <li class="pomadoras-item"></li>
+      {{/times}}
+    </ul>
+    <a class="link-add icomoon" href="#" title="Add">&#xe900;</a>
+  </section>
+
+  <div class="timer-wrapper">
+    <div class="timer category--{{obj.category}}">
+      <div class="timer-inner">
+        <div class="timer-pie spinner"></div>
+        <div class="timer-pie filler"></div>
+        <div class="mask"></div>
+        <div class="timer-text-wrap">
+          <div class="timer-text">
+            <p class="timer-guide">Let’s do it!</p>
+            <p class="process-text" style="display: none">
+              <span class="counter"></span><br>
+              <span class="min">min</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class=" icomoon">
+      <a href="#task-list" class="arrow arrow--left">&#xe902;</a>
+      <a href="#reports" class="arrow arrow--right">&#xe903;</a>
+    </div>
+
+  </div>
+
+  <div class="timer-controls start-buttons-block">
+    <button class="start-pomodora-button button button--large button--green">Start Pomodora</button>
+  </div>
+
+  <div class="timer-controls process-buttons-block" style="display: none">
+    <button class="fail-pomodora-button button button--large button--red">Fail Pomodora</button>
+    <button class="finish-pomodora-button button button--large button--green">Finish Pomodora</button>
+  </div>
+
+</main>

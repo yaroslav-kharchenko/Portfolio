@@ -1,0 +1,258 @@
+/*Tasks*/
+
+.task-groups-list{
+  //margin-top: 1.813rem;
+  position: relative;
+}
+
+.task-groups__item{
+  position: relative;
+  margin-bottom: 1.875rem;
+}
+
+/*Task List*/
+
+.task-list{
+  padding-top: 2.438rem;
+  position: relative;
+}
+
+.remove--active .select__tabs{
+  display: block;
+  position: static;
+  margin-bottom: 1.5rem;
+}
+
+.remove--active .daily-list .select__tabs{
+  position: absolute;
+  top: 0.3125rem;
+  left: 0;
+  z-index: 100;
+  color: @color-main-font;
+}
+
+.remove--active .link-remove-tasks:after{
+  display: block;
+}
+
+.trash{
+  width: 5.438rem;
+  line-height: 5.438rem;
+  position: absolute;
+  background: red;
+  color: #fff;
+  text-align: center;
+  font-size: 2.563rem;
+
+  .recycle,
+  .cancel-remove{
+    display: block;
+  }
+}
+
+/*Remove inactive*/
+
+.trash{
+  left: -4.75rem;
+  cursor: auto;
+}
+
+/*Remove active*/
+
+.remove--active .trash{
+  left: 0;
+  cursor: pointer;
+}
+
+.remove--active .cancel-remove{
+  display: none;
+}
+
+.remove--active .in-recycle .cancel-remove{
+  display: block;
+}
+
+.remove--active .in-recycle .recycle{
+  display: none;
+}
+
+/*Task list*/
+
+.task-list-block{
+  position: relative;
+}
+
+/*Global lists*/
+
+.global-list{
+  position: relative;
+}
+
+.global-list .tabs__link{
+  letter-spacing: -0.01em;
+}
+
+.global_list{
+  text-decoration: none;
+  color: @color-main-font;
+  font-family: @second-font-family;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  font-weight: bold;
+  position: relative;
+}
+
+.global_list:hover{
+  color: #fff;
+}
+
+.icon-global-list-arrow-down{
+  display: none;
+}
+
+.opened-list .icon-global-list-arrow-right{
+  display: none;
+}
+
+.opened-list .icon-global-list-arrow-down{
+  display: block;
+}
+
+.global_list .global-list-arrow{
+  font-size: 0.625rem;
+  position: absolute;
+  top: 0.55rem;
+  right: -1.188rem;
+}
+
+.category-header{
+  padding-left: 1.313rem;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: @main-font-family;
+  text-transform: uppercase;
+}
+
+.global-list__list{
+  margin-top: 1.5rem;
+}
+
+.global-list__item{
+  position: relative;
+
+  &:before,
+  &:after{
+    position: absolute;
+    z-index: 20;
+    left: 0;
+    content: ' ';
+  }
+
+  &:before{
+    margin-top: 0.625rem;
+    height: calc(100% - 10px);
+    width: 11px;
+  }
+
+  &:after{
+    top: -2px;
+    left: -4px;
+    width: 19px;
+    height: 19px;
+    background: url("../../assets/img/sprite.png");
+  }
+
+  .task-list{
+    padding-top: 1.063rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .link-pick-up-task{
+    display: block;
+  }
+
+  .task-controls{
+    padding-top: 0.6875rem;
+    line-height: 1.875rem;
+  }
+
+  .daily-list-date{
+    display: none;
+  }
+
+  .task-date{
+    line-height: 1rem;
+    text-align: center;
+    width: 2.125rem;
+    padding-top: 0.625rem;
+  }
+
+  .task-date__day,
+  .task-date__month{
+    display: inline-block;
+    line-height: 1.25rem;
+  }
+
+  .task-date__month{
+    display: block;
+  }
+
+  .task-info{
+    padding-left: 2rem;
+  }
+
+}
+
+/*.global-list__item .task-date__day{*/
+/*font-family: 'PT Sans', sans-serif;*/
+/*font-size: 27px;*/
+/*font-weight: bold;*/
+/*line-height: 1.563rem;*/
+/*}*/
+
+/*Сверху старый стиль даты*/
+
+.global-list__item .task-date__day{
+  padding-top: 0.625rem;
+  font-family: @second-font-family;
+  font-size: 27px;
+  font-weight: bold;
+  line-height: 1.563rem;
+}
+
+.task-date__month{
+  font-family: @main-font-family;
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+  line-height: 0.6875rem;
+  font-weight: bold;
+}
+
+/*margin bottom fix*/
+.global-list{
+  padding-bottom: 1px;
+}
+
+@media @tablet{
+  html{
+    font-size: 18px;
+  }
+  .task-list-block{
+    padding-top: 0;
+  }
+}
+
+@media @mobile{
+  html{
+    font-size: 19px;
+  }
+  .global-list__tabs{
+    .tabs__link{
+      font-size: 1.263rem;
+    }
+  }
+}
+
+@media @mobile-landscape{
+
+}

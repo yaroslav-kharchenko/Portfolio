@@ -1,0 +1,66 @@
+/*Form*/
+.categories_form{
+  margin-bottom: 4.438rem;
+}
+
+.categories-item{
+  width: 100%;
+  padding-left: 2.5rem;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 1.625rem;
+}
+
+.category-color{
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  left: -1px;
+  top: 0.4375rem;
+  background: url("../../assets/img/sprite.png");
+}
+
+.category-name:hover,
+.category-name:focus{
+  color: #fff;
+  border-color: #fff;
+}
+
+#category-1~.category-color{
+  background-position: 0 -19px;
+}
+
+#category-2~.category-color{
+  background-position: -18px -19px;
+}
+
+#category-3~.category-color{
+  background-position: -54px -19px;
+}
+
+#category-4~.category-color{
+  background-position: -36px -19px;
+}
+
+#category-5~.category-color{
+  background-position: -72px -19px;
+}
+
+.category-name{
+  font-size: 1rem;
+  line-height: 2.063rem;
+  color: @color-main-font;
+  display: inline-block;
+  width: 100%;
+  border-bottom: 1px solid #425869;
+  font-family: @main-font-family;
+}
+
+@media @mobile{
+  .category-name{
+    font-size: 1.25rem;
+  }
+  .content-wrap {
+    padding-top: 3rem;
+  }
+}

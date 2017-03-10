@@ -1,0 +1,280 @@
+/*TIMER*/
+
+.timer-header{
+  font-size: 1.75rem;
+  font-weight: bold;
+  line-height: 1.25rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 2.063rem;
+}
+
+.timer-description{
+  font-size: 1.063rem;
+  font-weight: 300;
+  letter-spacing: 0.015em;
+}
+
+/*pomadoras*/
+
+.pomadoras-section{
+  margin-top: 2.313rem;
+}
+
+.pomadoras-list{
+  padding: 0;
+  display: inline-block;
+}
+
+.pomadoras-item{
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.438rem;
+  margin-right: 0.375rem;
+  background: url("../../assets/img/tomato.svg");
+  cursor: pointer;
+}
+
+.pomadoras-item:hover{
+  background: url("../../assets/img/tomato_fill.svg");
+}
+
+.tomato-fill{
+  background: url("../../assets/img/tomato_fill.svg");
+}
+
+.tomato-failed{
+  background: url("../../assets/img/tomato-failed.svg");
+}
+
+.link-add{
+  color: #8ca4b7;
+  font-size: 0.9375rem;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 0.3125rem;
+}
+
+.link-add:hover{
+  color: #fff;
+}
+
+/*Timer*/
+
+.timer-wrapper{
+  width: 100%;
+  padding: 3.125rem 0;
+  position: relative;
+}
+
+.timer{
+  width: 15.88rem;
+  height: 15.88rem;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 50%;
+  border: 0.375rem solid #fff;
+  background: @color-main-background;
+  box-shadow: 0 5px 100px rgba(0,0,0,0.25);
+}
+
+.timer-inner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  border: 2.5rem solid @color-main-font;
+}
+
+.timer-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: @second-font-family;
+  font-size: 1.625rem;
+}
+
+.finish-text,
+.break-over{
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+}
+
+.process-text{
+  font-family: @main-font-family;
+}
+
+.status{
+  font-size: 0.9375rem;
+  text-transform: uppercase;
+}
+
+.counter{
+  font-size: 6.25rem;
+  line-height: 5.438rem;
+}
+
+.min{
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+/*Timer States*/
+
+.state--active .timer-inner{
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+/*Arrows*/
+
+.arrow{
+  position: fixed;
+  font-size: 2.625rem;
+  color: @color-main-font;
+  top: 50%;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: -1.313rem;
+  &:hover{
+    color: #fff;
+  }
+  &--left{
+    left: 2.5rem;
+  }
+  &--right{
+    right: 2.5rem;
+  }
+  &--hidden{
+    visibility: hidden;
+  }
+}
+
+/*Timer controls*/
+
+.timer-controls{
+  margin: 1.188rem 0 3.125rem;
+}
+
+.timer-main,
+.reports-main{
+  color: #fff;
+  text-align: center;
+  font-family: @main-font-family;
+}
+
+/*TIMER Component*/
+
+.timer-inner {
+  position: relative;
+  background: @color-main-background;
+  overflow: hidden;
+  border: none;
+  width: 14.81rem;
+  height: 14.81rem;
+  box-sizing: border-box;
+  .filler {
+    box-sizing: border-box;
+    border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+    left: 50%;
+    opacity: 0;
+    z-index: 100;
+    //animation: opa 15s steps(1, end) infinite reverse;
+    border-left: none;
+  }
+  .pie {
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    transform-origin: 100% 50%;
+    position: absolute;
+    background: @color-main-font;
+  }
+  .spinner {
+    box-sizing: border-box;
+    border-radius: 100% 0 0 100% / 50% 0 0 50%;
+    z-index: 200;
+    border-right: none;
+    //animation: rota 15s linear infinite;
+  }
+  .timer-pie {
+    width: 50%;
+    height: 100%;
+    transform-origin: 100% 50%;
+    position: absolute;
+    background: @color-main-font;
+  }
+  .mask {
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background: inherit;
+    opacity: 1;
+    z-index: 300;
+    //animation: opa 15s steps(1, end) infinite;
+  }
+  .timer-text{
+    width: 180px;
+  }
+}
+
+.timer-text-wrap{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 400;
+  width: 10rem;
+  height: 10rem;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: @color-main-background;
+}
+
+.timer{
+  animation: tscale .5s linear;
+}
+
+
+@keyframes rota {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes opa {
+  0% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes tscale {
+  0% { transform: scale(0);}
+  100%{transform: scale(1);}
+}
+
+@media @tablet{
+  .arrow--left{
+    left: 1rem;
+  }
+  .arrow--right{
+    right: 1rem;
+  }
+}
+
+@media @mobile{
+  .arrow--left{
+    left: 1rem;
+  }
+  .arrow--right{
+    right: 1rem;
+  }
+  .timer-controls{
+    width: 80%;
+    margin: 0 auto;
+  }
+}

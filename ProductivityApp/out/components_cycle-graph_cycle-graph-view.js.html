@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/cycle-graph/cycle-graph-view.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/cycle-graph/cycle-graph-view.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * CycleGraph component view
+ * Consist of methods for cycle graph render
+ * @class CycleGraphView
+ */
+export default class View {
+
+  constructor(options){
+    this.valueWT = parseInt(options.wtValue);
+    this.valueSB = parseInt(options.sbValue);
+    this.valueWI = parseInt(options.wiValue);
+    this.valueLB = parseInt(options.lbValue);
+    this.docFragment = document.createDocumentFragment();
+  }
+
+  /**
+   * Set options for graph
+   * @method
+   * @memberof CycleGraphView
+   * @param {object[]} options - object which consist of pomodoras graph parameters
+   * @param {string} options[].wtValue - work time duration.
+   * @param {string} options[].sbValue - short break duration.
+   * @param {string} options[].wiValue - work iteration duration.
+   * @param {string} options[].lbValue - long break duration.
+   */
+  setOptions(options) {
+    this.valueWT = parseInt(options.wtValue);
+    this.valueSB = parseInt(options.sbValue);
+    this.valueWI = parseInt(options.wiValue);
+    this.valueLB = parseInt(options.lbValue);
+  }
+
+  /**
+   * Get amount of time
+   * @method
+   * @memberof CycleGraphView
+   * @param {number} WT - work time duration.
+   * @param {number} SB - short break duration.
+   * @param {number} WI - work iteration duration.
+   * @param {number} LB - long break duration.
+   * @returns {number} - (workTime + shortBreak) * (workIteration * 2) - (shortBreak * 2) + longBreak
+   */
+  getAmountTime(WT,SB,WI,LB) {
+    return (WT + SB) * (WI * 2) - (SB * 2) + LB;
+  }
+
+  /**
+   * Get full cycle period
+   * @method
+   * @memberof CycleGraphView
+   * @param {number} WT - work time duration.
+   * @param {number} SB - short break duration.
+   * @param {number} WI - work iteration duration.
+   * @param {number} LB - long break duration.
+   * @returns {number} - (workTime + shortBreak) - shortBreak + longBreak
+   */
+  getFullCycle(WT,SB,WI,LB) {
+    return (WT + SB) * WI - SB + LB;
+  }
+
+  /**
+   * Returns time value in right format
+   * @param {number} num - current period value on time scale
+   * @method
+   * @memberof CycleGraphView
+   * @return {string} - period value on time scale in right format
+   */
+  getTimeFormat(num) {
+    let timeValue;
+    let hours = ~~(num / 60);
+    let minutes = (num % 60);
+    if (hours &amp;&amp; minutes > 0){
+      timeValue = hours + 'h ' + minutes + 'm';
+    } else if (hours &amp;&amp; minutes === 0){
+      timeValue = hours + 'h';
+    } else {
+      timeValue = minutes + 'm';
+    }
+    return timeValue;
+  }
+
+  /**
+   * Generates timelines scale
+   * @method
+   * @memberof CycleGraphView
+   */
+  timelineGenerate(){
+    let fullCycleTime = this.getAmountTime(this.valueWT, this.valueSB, this.valueWI, this.valueLB);
+
+    let timelineUL = document.createElement('ul');
+    timelineUL.classList.add('time-line');
+
+    let timePointsCount = parseInt(fullCycleTime/30);
+
+    for (let i = 1; i &lt;= timePointsCount; i++){
+      let li = document.createElement('li');
+      li.classList.add('time-period');
+      li.style.width = (30/fullCycleTime) * 100 + '%';
+      let span = document.createElement('span');
+      span.classList.add('time-period__value');
+      span.innerHTML = this.getTimeFormat(30*i);
+      li.appendChild(span);
+      timelineUL.appendChild(li);
+    }
+    this.docFragment.appendChild(timelineUL);
+  }
+
+  /**
+   * Generates graph
+   * @method
+   * @memberof CycleGraphView
+   */
+  graphGenerate(){
+    let fullCycleTime = this.getAmountTime(this.valueWT, this.valueSB, this.valueWI, this.valueLB);
+
+    let liCount = (this.valueWI * 4) - 2 + 1; //((Work Time + Short Break) * 2) * iterationsCount - 2*ShortBreak + 1*LongBreak
+    let workTimeCycle = this.valueWI * 2 - 1;
+    let graphUL = document.createElement('ul');
+    graphUL.classList.add('cycle-graph');
+
+    for(let i = 1; i &lt;= liCount; i++){
+      let li = document.createElement('li');
+      if (i%2 != 0){
+        li.classList.add('work-time-period');
+        li.style.width = (this.valueWT/fullCycleTime) * 100 + '%';
+      } else {
+        if (i == workTimeCycle + 1){
+          li.classList.add('long-break-period');
+          let mark = document.createElement('span');
+          mark.classList.add('full-cycle-label');
+          mark.innerHTML = 'Full Cycle: ' + this.getTimeFormat(this.getFullCycle(this.valueWT, this.valueSB, this.valueWI, this.valueLB));
+          li.appendChild(mark);
+          li.style.width = (this.valueLB/fullCycleTime) * 100 + '%';
+        } else {
+          li.classList.add('short-break-period');
+          li.style.width = (this.valueSB/fullCycleTime) * 100 + '%';
+        }
+      }
+      graphUL.appendChild(li);
+    }
+    this.docFragment.appendChild(graphUL);
+  }
+
+  /**
+   * Render graph into this container;
+   * @method
+   * @memberof CycleGraphView
+   * @param {object} options - object with cycle graph options
+   */
+  render(options) {
+    let graphContainer = document.getElementsByClassName('cycle-graph-container')[0];
+    this.setOptions(options);
+    graphContainer.innerHTML = '';
+    this.graphGenerate();
+    this.timelineGenerate();
+    graphContainer.appendChild(this.docFragment);
+  }
+
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CategoriesController.html">CategoriesController</a></li><li><a href="CategoriesView.html">CategoriesView</a></li><li><a href="CycleControlsView.html">CycleControlsView</a></li><li><a href="CycleGraphController.html">CycleGraphController</a></li><li><a href="CycleGraphView.html">CycleGraphView</a></li><li><a href="DataService.html">DataService</a></li><li><a href="HeaderController.html">HeaderController</a></li><li><a href="HeaderView.html">HeaderView</a></li><li><a href="LoginController.html">LoginController</a></li><li><a href="LoginService.html">LoginService</a></li><li><a href="LoginView.html">LoginView</a></li><li><a href="ModalController.html">ModalController</a></li><li><a href="ModalView.html">ModalView</a></li><li><a href="PingService.html">PingService</a></li><li><a href="PomodorasController.html">PomodorasController</a></li><li><a href="PomodorasView.html">PomodorasView</a></li><li><a href="ReportsController.html">ReportsController</a></li><li><a href="SettingsController.html">SettingsController</a></li><li><a href="SettingsView.html">SettingsView</a></li><li><a href="TaskCollectionController.html">TaskCollectionController</a></li><li><a href="TaskCollectionModel.html">TaskCollectionModel</a></li><li><a href="TaskCollectionView.html">TaskCollectionView</a></li><li><a href="TaskItemController.html">TaskItemController</a></li><li><a href="TaskItemModel.html">TaskItemModel</a></li><li><a href="TaskItemView.html">TaskItemView</a></li><li><a href="TaskListController.html">TaskListController</a></li><li><a href="TaskListView.html">TaskListView</a></li><li><a href="TimerController.html">TimerController</a></li><li><a href="TimerView.html">TimerView</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Thu Dec 29 2016 19:09:52 GMT+0200 (Финляндия (зима))
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

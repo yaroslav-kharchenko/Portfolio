@@ -1,0 +1,64 @@
+.login-page{
+  background:
+          linear-gradient(
+                  rgba(8, 41, 63, 0.92),
+                  rgba(8, 41, 63, 0.92)
+          ),
+          url("../../assets/img/background.jpg") center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 3.125rem 0;
+}
+
+.login-header,
+.main {
+  display: block;
+  width: 20.63rem;
+  margin: 0 auto;
+}
+
+/*Login Header*/
+
+.login-header{
+  text-align: center;
+}
+
+.login-page-logo{
+  width: 15.31rem;
+}
+
+.main{
+  box-sizing: border-box;
+  padding-top: 0.625rem;
+}
+
+@import '../components/login-form';
+
+@media @tablet{
+  html{
+    font-size: 19px;
+  }
+}
+
+@media @mobile{
+  html{
+    font-size: 21px;
+  }
+  .login-header,
+  .main {
+    width: 70%;
+  }
+  .login-page-logo{
+    width: 100%;
+  }
+  .login-page .login-button{
+    width: 100%;
+  }
+}
+
+@media @mobile-landscape{
+  .login-header,
+  .main {
+    width: 45%;
+  }
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Reports</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/color_schemes.css">
+  <link rel="stylesheet" href="css/reports.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="js/charts_data.js"></script>
+  <script src="js/charts_script.js" defer></script>
+</head>
+<body>
+
+  <header class="page-header wrapper">
+    <nav class="menu">
+      <a class="menu__option link-charts icomoon" href="#" title="Charts">&#xe90c;</a>
+      <a class="menu__option link-options icomoon" href="#" title="Options">&#xe90b;</a>
+      <a class="menu__option link-exit icomoon" href="#" title="Exit">&#xe908;</a>
+    </nav>
+  </header>
+
+  <main class="content-wrap reports-main">
+
+    <h2 class="reports-header">Report</h2>
+
+    <div class="filters__top tabs">
+      <a href="#" class="tabs__link tabs__link--active">Day</a>
+      |<a href="#" class="tabs__link">Week</a>
+      |<a href="#" class="tabs__link">Month</a>
+    </div>
+
+    <div class="bagel-chart chart">
+      <div id="container" style="min-width: 300px; max-width: 605px; height: 317px; margin: 0 auto"></div>
+    </div>
+
+    <div class=" icomoon">
+      <a class="arrow arrow--left">&#xe902;</a>
+      <a class="arrow arrow--right">&#xe903;</a>
+    </div>
+
+    <div class="filters__bottom tabs">
+      <a href="#" class="tabs__link">Pomodoros</a>
+      |<a href="#" class="tabs__link tabs__link--active">Tasks</a>
+    </div>
+
+  </main>
+
+</body>
+</html>

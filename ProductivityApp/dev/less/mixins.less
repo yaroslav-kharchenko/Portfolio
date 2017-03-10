@@ -1,0 +1,56 @@
+/*clearfix*/
+
+.clearfix {
+  &:after {
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+/*Button*/
+
+.colored-button(@main-color, @hover-color, @active-color){
+
+  background: @main-color;
+
+  &:hover,
+  &:focus{
+    background: @hover-color;
+  }
+
+  &:active{
+    background: @active-color;
+  }
+
+}
+
+.colored-category(@category-color){
+  border-color: @category-color;
+
+  .trash {
+    background: @category-color;
+  }
+
+  .category-header{
+    color: @category-color;
+  }
+
+  &:before{
+    background: @category-color;
+  }
+}
+
+.colored-priority(@priority-color, @priority-background){
+  .task-name{
+    color: @priority-color;
+  }
+  .task-priority{
+    background: @priority-background;
+  }
+  &:before{
+    background: @priority-background;
+  }
+}

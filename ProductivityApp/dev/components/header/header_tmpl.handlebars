@@ -1,0 +1,24 @@
+<header class="page-header wrapper">
+  <div class="logo">
+    <a href="#"><img src="{{obj.logo.url}}" alt="{{obj.logo.alt}}"/></a>
+  </div>
+  {{#if options.title}}
+    <h1 class="page-title">{{options.title}}
+      {{#if options.tasklist}}
+        <button class="link-add-task icomoon">&#xe900;</button>
+      {{/if}}
+    </h1>
+  {{/if}}
+  <nav class="menu">
+    {{#if options.add}}
+      <a class="menu__option link-{{obj.menu.add.className}} icon-{{obj.menu.add.icon}} icomoon has-tooltip" href="#" title="{{obj.menu.add.title}}"></a>
+    {{/if}}
+    {{#if options.remove}}
+      <a class="menu__option link-{{obj.menu.remove.className}} icon-{{obj.menu.remove.icon}} icomoon has-tooltip" href="#" title="{{obj.menu.remove.title}}"><span class="remove-counter">0</span></a>
+    {{/if}}
+
+    <a class="menu__option link-{{obj.menu.charts.className}} icon-{{obj.menu.charts.icon}} icomoon has-tooltip" href="#reports" title="{{obj.menu.charts.title}}"></a>
+    <a class="menu__option link-{{obj.menu.options.className}} icon-{{obj.menu.options.icon}} icomoon has-tooltip" href="#settings" title="{{obj.menu.options.title}}"></a>
+    <a class="menu__option link-{{obj.menu.exit.className}} icon-{{obj.menu.exit.icon}} icomoon has-tooltip" href="#login" title="{{obj.menu.exit.title}}"></a>
+  </nav>
+</header>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Daily Task List</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/color_schemes.css">
+</head>
+<body class="page-header--static">
+
+  <header class="page-header wrapper">
+      <div class="logo">
+        <a href="#"><img src="img/Logo.svg" alt="" width="242"/></a>
+      </div>
+      <nav class="menu">
+        <a class="menu__option link-add-task icomoon" href="#" title="Add Task">&#xe900;</a>
+        <a class="menu__option link-remove-tasks icomoon" href="#" title="Remove Tasks">&#xe912;</a>
+        <a class="menu__option link-charts icomoon" href="#" title="Charts">&#xe90c;</a>
+        <a class="menu__option link-options icomoon" href="#" title="Options">&#xe90b;</a>
+        <a class="menu__option link-exit icomoon" href="#" title="Exit">&#xe908;</a>
+      </nav>
+  </header>
+
+  <main class="content-wrap task-list-block">
+
+    <h2 class="task-list__header">Daily Task List <a class="link-add-task icomoon" href="#" title="Add Task">&#xe900;</a></h2>
+
+    <ul class="task-groups-list">
+
+      <li class="task-groups__item daily-list">
+
+        <div class="daily-list__tabs tabs">
+          <a href="#" class="tabs__link">To Do</a>
+          |<a href="#" class="tabs__link">Done</a>
+        </div>
+
+        <div class="excelent-tasks guide">
+          <h2 class="guide-message">Excellent,<br>
+            all daily tasks done! :)</h2>
+        </div>
+
+      </li>
+
+      <li class="tasks-categories">
+
+        <a href="#" class="global_list">Global list
+          <span class="icon-arrow-right icomoon">&#xe907;</span>
+          <span class="icon-arrow-down icomoon">&#xe906;</span>
+        </a>
+
+        <div class="tasks-categories__tabs tabs">
+          <a href="#" class="tabs__link">All</a>
+          |<a href="#" class="tabs__link">Urgent</a>
+          |<a href="#" class="tabs__link">High</a>
+          |<a href="#" class="tabs__link">Middle</a>
+          |<a href="#" class="tabs__link">Low</a>
+        </div>
+
+        <ul class="tasks-categories__list">
+          <li class="tasks-categories__item category--work">
+            <h4 class="category-header">Work</h4>
+            <ul class="task-list">
+              <li class="task priority--urgent clearfix">
+
+                <div class="trash icomoon"> <!--in-recycle-->
+                  <span class="recycle">&#xe912;</span>
+                  <span class="cancel-remove">&#xe910;</span>
+                </div>
+
+                <div class="task-date">
+                  <span class="daily-list-date">TODAY</span><br>
+                  <span class="task-date__day">23</span><br>
+                  <span class="task-date__month">May</span>
+                </div>
+
+                <section class="task-info">
+                  <h5 class="task-name">Lorem ipsum sit amet</h5>
+                  <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+                </section>
+
+                <div class="task-priority clearfix">
+                  <span class="task-priority__icon-tomato icomoon">&#xe90e;</span>
+                  <span class="task-priority__icon-timer icomoon">&#xe90d;</span>
+                  <span class="task-priority__value">3</span>
+                </div>
+
+                <div class="task-controls">
+                  <a href="#" class="link-pick-up-task controls-btn icomoon">&#xe904;</a><br>
+                  <a href="#" class="link-edit-task controls-btn icomoon">&#xe905;</a>
+                </div>
+
+              </li>
+              <li class="task priority--high">
+
+                <div class="trash icomoon"> <!--in-recycle-->
+                  <span class="recycle">&#xe912;</span>
+                  <span class="cancel-remove">&#xe910;</span>
+                </div>
+
+                <div class="task-date">
+                  <span class="daily-list-date">TODAY</span><br>
+                  <span class="task-date__day">23</span><br>
+                  <span class="task-date__month">May</span>
+                </div>
+
+                <section class="task-info">
+                  <h5 class="task-name">Lorem ipsum sit amet</h5>
+                  <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+                </section>
+
+                <div class="task-priority clearfix">
+                  <span class="task-priority__icon-tomato icomoon">&#xe90e;</span>
+                  <span class="task-priority__icon-timer icomoon">&#xe90d;</span>
+                  <span class="task-priority__value">3</span>
+                </div>
+
+                <div class="task-controls">
+                  <a href="#" class="link-pick-up-task controls-btn icomoon">&#xe904;</a><br>
+                  <a href="#" class="link-edit-task controls-btn icomoon">&#xe905;</a>
+                </div>
+
+              </li>
+            </ul>
+          </li>
+      
+        </ul>
+
+      </li>
+
+    </ul>
+
+  </main>
+
+</body>
+</html>
